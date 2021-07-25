@@ -1,0 +1,56 @@
+At 10%
+
+Given 100KB.txt @10%
+Script passes returns true
+Diff shows a lot of a's then "newline"
+
+Given 1MB.bin @ 10%
+Diff passes
+Script returns false
+
+
+My own 1MB_file at 10%
+dd if=/dev/urandom of=1MB_file bs=1MB count=1
+Diff passes
+Script passes returns true
+
+
+
+************************************************************
+DEMO TEST NOTES
+./server 5555
+time ./client localhost 5555 1MB.bin > nolossoutput
+diff 1.file 1MB.bin
+python3 test_no_loss.py nolossoutput
+python3 rdproxy.py 5555 9999 0.2
+time ./client localhost 9999 1MB.bin > lossoutput
+diff 2.file 1MB.bin
+python3 test_loss_gbn.py lossoutput
+
+
+
+At 20%
+
+Given 100KB.txt at 20%
+diff passes 
+Script pass returns TRUE
+python3 test_loss_gbn.py outputfile100KB_txt
+
+Given 1MB.bin at 20%
+diff passes MOST of the time
+script returns TRUE Most of the time
+python3 test_loss_gbn.py outputfile1MBbin20
+
+
+My own 1MB_file at 20%
+dd if=/dev/urandom of=1MB_file bs=1MB count=1
+Diff passes
+Script passes returns TRUE
+python3 test_loss_gbn.py outputfile1MB_file
+
+
+My own 100KB_file at 20%
+dd if=/dev/urandom of=100KB_file bs=100KB count=1
+Diff passes
+Script passes returns TRUE
+python3 test_loss_gbn.py outputfile100KB_file
