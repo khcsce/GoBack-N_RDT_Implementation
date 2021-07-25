@@ -1,0 +1,33 @@
+NAME: Khoa Quach
+EMAIL: khoaquachschool@gmail.com
+ID: 105123806
+
+CS118 Project 2: Reliable Data Transfer Go Back N
+
+-The high level design of your server (one paragraph)
+===> TA skeleton code
+
+Problems:
+Understanding Go Back N concepts
+
+=> Solve:
+sample outputs provided by TAs
+TA discussions
+Go Back N videos
+
+Possible problems:
+Go Back N logic
+Pertaining to spec description
+also with pipelining requirements
+Dealing with sequence numbers 25601 case
+I believe my implementation is faulted to using modulo instead of rand()
+and how my if conditions can sometimes fail by using PAYLOAD as a conditionary constant
+(not sure if solved completely or correct)
+
+-List of any additional libraries used Acknowledgement of any online tutorials or code
+example (except class website) you have been using.
+
+https://www.programmersought.com/article/4057795117/
+https://blog.csdn.net/qq_22238021/article/details/80325285
+http://www2.ic.uff.br/~michael/kr1999/3-transport/3_040-principles_rdt.htm
+https://github.com/d-heck/udp-go-back-n-file-transfer
